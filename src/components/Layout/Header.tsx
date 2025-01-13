@@ -1,8 +1,8 @@
 import FullscreenIcon from '@mui/icons-material/Fullscreen'
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit'
-import SearchIcon from '@mui/icons-material/Search'
-import { Box, InputAdornment, TextField } from '@mui/material'
+import { Box } from '@mui/material'
 import { useState } from 'react'
+import OrderTabs from '../tabs/OrderTab'
 import LogoutMenu from './LogoutMenu'
 
 const Header = () => {
@@ -16,14 +16,9 @@ const Header = () => {
 		setIsFullScreen(!isFullScreen)
 	}
 	return (
-		<Box
-			component={'header'}
-			p={2}
-			bgcolor={'white'}
-			display='flex'
-			justifyContent='space-between'
-		>
-			<div>
+		<header className='p-3 bg-white flex justify-between h-[var(--header-height)]'>
+			<h1 className='text-2xl font-semibold'>Buyurtmalar</h1>
+			{/* <div>
 				<TextField
 					size='small'
 					placeholder='Buyurtmani qidirish'
@@ -37,7 +32,8 @@ const Header = () => {
 						},
 					}}
 				/>
-			</div>
+			</div> */}
+			<OrderTabs />
 
 			<Box display={'flex'} alignItems={'center'} gap={2}>
 				<button onClick={toggleFullScreen}>
@@ -45,7 +41,7 @@ const Header = () => {
 				</button>
 				<LogoutMenu />
 			</Box>
-		</Box>
+		</header>
 	)
 }
 

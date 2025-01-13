@@ -25,7 +25,7 @@ const SidebarLayout: React.FC = () => {
 				<Typography variant='h6' align='center' gutterBottom>
 					Aliya.uz
 				</Typography>
-				<List>
+				<List sx={{ pt: 3 }}>
 					{sidebarItems.map(({ text, Icon, path }) => (
 						<ListItem key={text} disablePadding>
 							<NavLink to={path} className={'nav-link'}>
